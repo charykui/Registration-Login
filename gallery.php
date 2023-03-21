@@ -95,7 +95,7 @@ body {
     <ul>
       <li><a href="registerPage.php"> Home</a></li>
 	  <li><a href="#aboutus"> About Us</a></li>
-	  <li><a href="#gallery"> Gallery</a></li>
+	  <li><a href="gallery.php"> Gallery</a></li>
       <li><a href="#"> <?php
          echo "$username!</h1>";
       ?>

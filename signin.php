@@ -29,7 +29,7 @@ try{
   $_SESSION['username'] = $user['email'];
 
   // redirect to the home page or another authorized page
-  header('Location: synopsis.php');
+  header('Location: gallery.php');
   exit;
   } 
  else {
