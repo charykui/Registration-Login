@@ -1,6 +1,7 @@
 <?php
 $host = "localhost";
 $username = "root";
+$password= "admin123";
 $dbname = "mydb";
 
 
@@ -13,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 try{
   $conn = new pdo("mysql:host=$host;mydbname=$dbname",$username);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  //$conn->exec("USE $dbname");
+  $conn->exec("USE $dbname");
   // prepare a SELECT statement to retrieve the user's information from the database
   $sql="SELECT * FROM mytable WHERE email=?";
   $stmt=$conn->prepare($sql);
@@ -25,7 +26,8 @@ try{
   // sign the user in
   session_start();
   $_SESSION['user_id'] = $user['id'];
-  $_SESSION['username'] = $user['username'];
+  $_SESSION['username'] = $user['email'];
+
   // redirect to the home page or another authorized page
   header('Location: synopsis.php');
   exit;
